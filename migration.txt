@@ -1,0 +1,32 @@
+migration:
+npm i --save-dev sequelize-cli
+
+then inside project
+npm i --save sequelize
+npx sequelize-cli init
+
+it will create a config, migration, model and seeder folders
+
+config will have development, test and production mode. default will be development mode.
+
+create migration (when we create migration, it will create a model and migration file)
+npx sequelize-cli model:generate --name Users --attribute name:string,email:string
+
+we can edit migration file to add or delete columns.
+
+to migrate the model
+npx sequelize-cli db:migrate
+
+once we migrate a file, it can not be migrate again unless we delete that migration entry from SequelizeMeta table.
+
+undo last migration
+npx sequelize-cli db:migrate:undo
+
+undo all migration
+npx sequelize-cli db:migrate:undo:all
+
+undo specific migration
+npx sequelize-cli db:migrate:undo --name migrationFileName
+
+migration status
+npx sequelize-cli db:migrate:status

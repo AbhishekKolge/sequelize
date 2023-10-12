@@ -1,0 +1,14 @@
+automatic entry
+npx sequelize-cli seed:generate --name user-add
+
+add all seeders (up function)
+npx sequelize-cli db:seed:all
+(it will add entry to table)
+
+add specific seeder
+npx sequelize-cli db:seed --seed seederFileName
+
+undo (down function)
+npx sequelize-cli db:seed:undo:all
+
+(use queryInterface in up and down function)
